@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Model.Repositories;
 
 namespace Model.Migrations
 {
     [DbContext(typeof(EFOpleidingenContext))]
-    partial class EFOpleidingenContextModelSnapshot : ModelSnapshot
+    [Migration("20200625094523_Initial Seeding")]
+    partial class InitialSeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -152,16 +154,16 @@ namespace Model.Migrations
                         {
                             DocentId = 1,
                             CampusId = 4,
-                            Familienaam = "Abbeloos",
+                            Familienaam = "Abbeloo s",
                             InDienst = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "Willy",
-                            Wedde = 1500m
+                            Wedde = 1400m
                         },
                         new
                         {
                             DocentId = 2,
                             CampusId = 2,
-                            Familienaam = "Abelshausen",
+                            Familienaam = "Abelsh ausen",
                             HeeftRijbewijs = true,
                             InDienst = new DateTime(2019, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "Joseph",
@@ -171,7 +173,7 @@ namespace Model.Migrations
                         {
                             DocentId = 3,
                             CampusId = 3,
-                            Familienaam = "Achten",
+                            Familienaam = "Achten ",
                             HeeftRijbewijs = false,
                             InDienst = new DateTime(2019, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "Joseph",
@@ -181,7 +183,7 @@ namespace Model.Migrations
                         {
                             DocentId = 4,
                             CampusId = 4,
-                            Familienaam = "Adam",
+                            Familienaam = "Adam ",
                             InDienst = new DateTime(2019, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "François",
                             Wedde = 1700m
@@ -190,7 +192,7 @@ namespace Model.Migrations
                         {
                             DocentId = 5,
                             CampusId = 1,
-                            Familienaam = "Adriaensens",
+                            Familienaam = "Adriaense ns",
                             HeeftRijbewijs = true,
                             InDienst = new DateTime(2019, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "Jan",
@@ -200,7 +202,7 @@ namespace Model.Migrations
                         {
                             DocentId = 6,
                             CampusId = 6,
-                            Familienaam = "Adriaensens",
+                            Familienaam = "Adriaens ens",
                             HeeftRijbewijs = false,
                             InDienst = new DateTime(2019, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "René",
@@ -210,7 +212,7 @@ namespace Model.Migrations
                         {
                             DocentId = 7,
                             CampusId = 3,
-                            Familienaam = "Aerenhouts",
+                            Familienaam = "Aerenho uts",
                             InDienst = new DateTime(2019, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Voornaam = "Frans",
                             Wedde = 1300m
