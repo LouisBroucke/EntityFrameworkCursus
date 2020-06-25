@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Model.Repositories
 {
@@ -19,6 +21,17 @@ namespace Model.Repositories
         public DbSet<Campus> Campussen { get; set; }
         public DbSet<Docent> Docenten { get; set; }
         public DbSet<Land> Landen { get; set; }
+
+        private ILoggerFactory GetLoggerFactory()
+        {
+            IServiceCollection serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddLogging(
+                builder => builder.AddConsole()
+                                  .AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.Information));
+
+            return serviceCollection.BuildServiceProvider().GetService<ILoggerFactory>();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,7 +51,9 @@ namespace Model.Repositories
             {
                 optionsBuilder.UseSqlServer(
                     connectionString
-                    , options => options.MaxBatchSize(150));
+                    , options => options.MaxBatchSize(150))
+                    .UseLoggerFactory(GetLoggerFactory())
+                    .EnableSensitiveDataLogging(true);
             }
         }
 
