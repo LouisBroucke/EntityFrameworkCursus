@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Model.Repositories;
 
 namespace Model.Migrations
 {
     [DbContext(typeof(EFOpleidingenContext))]
-    partial class EFOpleidingenContextModelSnapshot : ModelSnapshot
+    [Migration("20200625122645_Alle docenten toevoegen")]
+    partial class Alledocententoevoegen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
